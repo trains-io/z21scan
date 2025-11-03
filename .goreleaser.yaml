@@ -1,0 +1,18 @@
+project_name: z21scan
+version: 2
+
+release:
+  github:
+    owner: trains-io
+    name: z21scan
+  name_template: "Release {{.Version}}"
+  draft: true
+  prerelease: auto
+
+changelog:
+  disable: true
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+

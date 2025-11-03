@@ -1,11 +1,5 @@
 package cmd
 
-// TODO:
-// * add Makefile for local builds, format, vet, ...
-// * add github actions to publish binary
-// * add README.md
-// * tag version
-
 import (
 	"context"
 	"encoding/json"
