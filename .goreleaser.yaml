@@ -16,3 +16,19 @@ builds:
   - env:
       - CGO_ENABLED=0
 
+archives:
+  - name_template: "z21scan-{{.Version}}-{{.Os}}-{{.Arch}}{{if .Arm}}{{.Arm}}{{end}}"
+    wrap_in_directory: true
+    formats:
+      - zip
+
+checksum:
+  name_template: "SHA256SUMS"
+  algorithm: sha256
+
+nfpms:
+  - file_name_template: "z21scan-{{.Version}}-{{.Os}}-{{.Arch}}{{if .Arm}}{{.Arm}}{{end}}"
+    bindir: /usr/local/bin
+    formats:
+      - deb
+      - rpm
