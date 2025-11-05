@@ -117,8 +117,9 @@ var rootCmd = &cobra.Command{
 	Use:   "z21scan [IFACE|NETWORK]",
 	Short: "Scan local network for Z21 devices.",
 	Long: `z21scan scans a local network for reachable Z21 devices.
-You can specify either a network interface (e.g. "eth0") or a 
-network address in CIDR notation (e.g. "192.168.2.0/24").`,
+
+You can specify either a network interface (e.g. "eth0") or a network address
+in CIDR notation (e.g. "192.168.2.0/24").`,
 	Args:          cobra.ExactArgs(1),
 	SilenceUsage:  false,
 	SilenceErrors: true,
