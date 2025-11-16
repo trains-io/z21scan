@@ -211,7 +211,10 @@ in CIDR notation (e.g. "192.168.2.0/24").`,
 	},
 }
 
-func Execute() {
+func Execute(v, c, d string) {
+	Version = v
+	Commit = c
+	Date = d
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s\n", err)
 		os.Exit(1)
@@ -219,6 +222,8 @@ func Execute() {
 }
 
 func init() {
+	rootCmd.AddCommand(versionCmd)
+
 	rootCmd.Flags().IntVarP(&port, "port", "p", 21105, "UDP port to probe")
 	rootCmd.Flags().StringVarP(&output, "output", "o", "normal", "Output format: short|normal|verbose|json")
 	rootCmd.Flags().BoolVarP(&quiet, "quiet", "q", false, "Short output (same as -o short)")
